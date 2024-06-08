@@ -11,11 +11,11 @@ export default function HomeScreen() {
         data={days}
         contentContainerStyle={styles.content}
         columnWrapperStyle={styles.column}
-        numColumns={2}
+        numColumns={3}
         renderItem={({ item }) => <DayListItem day={item} />}
       />
 
-      <StatusBar style="auto" />
+      <StatusBar style="dark" />
     </View>
   );
 }
