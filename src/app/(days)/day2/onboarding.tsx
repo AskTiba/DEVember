@@ -1,13 +1,14 @@
-import { Link, Stack, router } from 'expo-router';
-import React, { useState } from 'react';
-import { Text, View, StyleSheet, SafeAreaView, Pressable } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { StatusBar } from 'expo-status-bar';
+import { Link, Stack, router } from "expo-router";
+import React, { useState } from "react";
+import { Text, View, StyleSheet, Pressable } from "react-native";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
 import {
   GestureDetector,
   Gesture,
   Directions,
-} from 'react-native-gesture-handler';
+} from "react-native-gesture-handler";
 
 import Animated, {
   FadeIn,
@@ -16,22 +17,22 @@ import Animated, {
   SlideOutLeft,
   BounceOutLeft,
   SlideInRight,
-} from 'react-native-reanimated';
+} from "react-native-reanimated";
 
 const onboardingSteps = [
   {
-    icon: 'snowflake',
-    title: 'Welcome #DEVember',
-    description: 'Daily React Native tutorials during December',
+    icon: "snowflake",
+    title: "Welcome #DEVember",
+    description: "Daily React Native tutorials during December",
   },
   {
-    icon: 'people-arrows',
-    title: 'Learn and grow together',
-    description: 'Learn by building 24 projects with React Native and Expo',
+    icon: "people-arrows",
+    title: "Learn and grow together",
+    description: "Learn by building 24 projects with React Native and Expo",
   },
   {
-    icon: 'book-reader',
-    title: 'Education for Children',
+    icon: "book-reader",
+    title: "Education for Children",
     description:
       'Contribute to the fundraiser "Education for Children" to help Save the Children in their effort of providing education to every child',
   },
@@ -81,7 +82,7 @@ export default function OnboardingScreen() {
             key={index}
             style={[
               styles.stepIndicator,
-              { backgroundColor: index === screenIndex ? '#CEF202' : 'grey' },
+              { backgroundColor: index === screenIndex ? "#CEF202" : "grey" },
             ]}
           />
         ))}
@@ -133,51 +134,52 @@ export default function OnboardingScreen() {
 const styles = StyleSheet.create({
   page: {
     // alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
     flex: 1,
-    backgroundColor: '#15141A',
+    backgroundColor: "#15141A",
+    paddingTop: 5,
   },
   pageContent: {
     padding: 20,
     flex: 1,
   },
   image: {
-    alignSelf: 'center',
+    alignSelf: "center",
     margin: 20,
     marginTop: 70,
   },
   title: {
-    color: '#FDFDFD',
+    color: "#FDFDFD",
     fontSize: 50,
-    fontFamily: 'InterBlack',
+    fontFamily: "InterBlack",
     letterSpacing: 1.3,
     marginVertical: 10,
   },
   description: {
-    color: 'gray',
+    color: "gray",
     fontSize: 20,
-    fontFamily: 'Inter',
+    fontFamily: "Inter",
     lineHeight: 28,
   },
   footer: {
-    marginTop: 'auto',
+    marginTop: "auto",
   },
 
   buttonsRow: {
     marginTop: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 20,
   },
   button: {
-    backgroundColor: '#302E38',
+    backgroundColor: "#302E38",
     borderRadius: 50,
-    alignItems: 'center',
+    alignItems: "center",
     flex: 1,
   },
   buttonText: {
-    color: '#FDFDFD',
-    fontFamily: 'InterSemi',
+    color: "#FDFDFD",
+    fontFamily: "InterSemi",
     fontSize: 16,
 
     padding: 15,
@@ -186,14 +188,14 @@ const styles = StyleSheet.create({
 
   // steps
   stepIndicatorContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 8,
     marginHorizontal: 15,
   },
   stepIndicator: {
     flex: 1,
     height: 3,
-    backgroundColor: 'gray',
+    backgroundColor: "gray",
     borderRadius: 10,
   },
 });

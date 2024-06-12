@@ -29,7 +29,7 @@ const markdownStyles = StyleSheet.create({
   },
   body: {
     fontSize: 16,
-    // fontFamily: 'Inter',
+    fontFamily: 'Inter',
     lineHeight: 24,
   },
 });
@@ -37,7 +37,7 @@ const markdownStyles = StyleSheet.create({
 const styles = StyleSheet.create({
   page: {
     backgroundColor: 'white',
-    flex: 1,
+    flex: 0,
     padding: 10,
     borderRadius: 10,
   },

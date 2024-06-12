@@ -1,6 +1,6 @@
-import { Stack } from 'expo-router';
-import { useEffect, useState } from 'react';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Stack } from "expo-router";
+import { useEffect, useState } from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import {
   useFonts,
@@ -8,15 +8,22 @@ import {
   Inter_600SemiBold,
   Inter_700Bold,
   Inter_400Regular,
-} from '@expo-google-fonts/inter';
+} from "@expo-google-fonts/inter";
 import {
   AmaticSC_400Regular,
   AmaticSC_700Bold,
-} from '@expo-google-fonts/amatic-sc';
+} from "@expo-google-fonts/amatic-sc";
 
-import * as SplashScreen from 'expo-splash-screen';
-import AnimatedSplashScreen from '@/components/day4/AnimatedSplashScreen';
-import Animated, { FadeIn } from 'react-native-reanimated';
+import {
+  Gwendolyn_400Regular,
+  Gwendolyn_700Bold,
+} from "@expo-google-fonts/gwendolyn";
+
+import { Pacifico_400Regular } from "@expo-google-fonts/pacifico";
+
+import * as SplashScreen from "expo-splash-screen";
+import AnimatedSplashScreen from "@components/day4/AnimatedSplashScreen";
+import Animated, { FadeIn } from "react-native-reanimated";
 
 // SplashScreen.preventAutoHideAsync();
 
@@ -32,6 +39,13 @@ export default function RootLayout() {
 
     Amatic: AmaticSC_400Regular,
     AmaticBold: AmaticSC_700Bold,
+
+    Gwendolyn_400Regular,
+    Gwendolyn_700Bold,
+
+    Pacifico_400Regular,
+
+    RubikGlitchPop: require("@assets/fonts/RubikGlitchPop-Regular.ttf"),
   });
 
   useEffect(() => {
@@ -40,6 +54,8 @@ export default function RootLayout() {
       setAppReady(true);
     }
   }, [fontsLoaded, fontError]);
+
+  // console.log(`Daddy is ${fontError}`)
 
   const showAnimatedSplash = !appReady || !splashAnimationFinished;
   if (showAnimatedSplash) {
@@ -58,7 +74,7 @@ export default function RootLayout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Animated.View style={{ flex: 1 }} entering={FadeIn}>
         <Stack screenOptions={{}}>
-          <Stack.Screen name="index" options={{ title: 'DEVember' }} />
+          <Stack.Screen name="index" options={{ title: "DEVember" }} />
         </Stack>
       </Animated.View>
     </GestureHandlerRootView>

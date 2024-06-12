@@ -1,5 +1,6 @@
-import { Text, View, StyleSheet, Pressable } from 'react-native';
-import { Link } from 'expo-router';
+import { Text, View, StyleSheet, Pressable } from "react-native";
+import { Link } from "expo-router";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 type DayListItem = {
   day: number;
@@ -10,27 +11,27 @@ export default function DayListItem({ day }: DayListItem) {
     <Link href={`/day${day}`} asChild>
       <Pressable style={styles.box}>
         <Text style={styles.text}>{day}</Text>
-      </Pressable>
+      </Pressable >
     </Link>
   );
 }
 
 const styles = StyleSheet.create({
   box: {
-    backgroundColor: '#32cd32',
+    backgroundColor: "#32cd32",
     flex: 1,
     aspectRatio: 1,
 
     borderWidth: StyleSheet.hairlineWidth,
-    borderColor: '#ffd700',
+    borderColor: "#ffd700",
     borderRadius: 20,
 
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   text: {
-    color: '#ffd700',
-    fontSize: 45,
-    fontFamily: 'AmaticBold',
+    color: "#ffd700",
+    fontSize: 80,
+    fontFamily: "RubikGlitchPop",
   },
 });
